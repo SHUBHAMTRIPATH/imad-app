@@ -4,6 +4,9 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+app.get('/action-one', function (req, res) {
+  res.send('action want sthe request to be accepted .. it will be accepted');
+});
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
